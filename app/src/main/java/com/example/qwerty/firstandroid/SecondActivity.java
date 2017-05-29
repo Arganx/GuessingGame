@@ -28,6 +28,7 @@ public class SecondActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent myIntent = new Intent(SecondActivity.this,MainActivity.class);
                 startActivity(myIntent);
+                finish();
             }
         });
     }

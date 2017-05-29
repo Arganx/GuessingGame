@@ -37,12 +37,13 @@ public class MainActivity extends AppCompatActivity {
         start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(started==false)
+                if(!started)
                 {
                     started=true;
                     start.setText("Zatwierdz");
                     number = ThreadLocalRandom.current().nextInt(0, 100 + 1);
                     insertion.setEnabled(true);
+                    tries =0;
                 }
                 else if(!insertion.getText().toString().equals(""))
                 {
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
                         started=false;
                         Intent myIntent = new Intent(MainActivity.this,SecondActivity.class);
                         startActivity(myIntent);
+                        finish();
                     }
                 }
 
